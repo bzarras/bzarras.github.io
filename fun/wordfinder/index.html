@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Word Finder</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <style>
+      .indent {
+        padding-left: 10px;
+      }
+    </style>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="wordlist.js"></script>
+</head>
+<body>
+  <div>
+    <h1>Wordfinder</h1>
+    <h2>How many permutations of a particular english word are also words?</h2>
+    <p>Tip: Use this to figure out your best Scrabble options</p>
+    <form>
+      <div>
+        <label for="user-word">Type a word:</label>
+        <input type="text" id="user-word">
+        <input type="submit" value="Submit">
+      </div>
+    </form>
+    <div id="results" style="margin-top: 20px"></div>
+
+    <script type="text/javascript">
+        $("document").ready(function() {
+            var timer = new Timer();
+
+            var dictionary = {};
+            for (var i = 0; i < wordlist.length; i++) {
+              dictionary[wordlist[i]] = 1
+            }
+
+            /*===== Events =====*/
+            $("form").submit(function(event) {
+                event.preventDefault();
+                $("#results").empty();
+                timer.start();
+                var word = $("#user-word").val().toLowerCase();
+                if (word.length > 0) {
+                  var perms = permute(word); // performing permute
+                  var matches = [];
+                  for (var i = 0; i < perms.length; i++) {
+                      // check if the permutation is in the dictionary
+                      if (dictionary[perms[i]]) {
+                          // weeding out permutations due to duplicate letters
+                          if (matches.indexOf(perms[i]) === -1) {
+                              matches.push(perms[i]);
+                          }
+                      }
+                  }
+                  timer.end()
+                  print("Permutations: " + perms.length + " - " + timer.time() + "ms");
+                  print("Words you can make: " + matches.length);
+                  for (var i = 0; i < matches.length; i++) {
+                      printWord(matches[i]);
+                  }
+                }
+            });
+
+            /*===== Main API =====*/
+            // Takes some text and appends it to the body element.
+            function print(text) {
+                $("#results").append("<p>" + text + "</p>");
+            }
+
+            function printWord(text) {
+                $("#results").append("<p class=\"indent\">" + text + "</p>");
+            }
+
+            // Call permute to return a list of permutations of a word
+            function permute(text) {
+              // if (text.length > 7) {
+              //     alert("Too many characters! This algorithm runs in time proportional to N!.")
+              //     return null;
+              // }
+              var charArray = text.split(""); // turns text into array of chars
+              var results = [];
+              generate(text.length, charArray, results);
+              return results;
+            }
+
+            // Implementation of Heap algorithm to generate permutations.
+            // currently broken
+            function generate(n, arr, results) {
+                if (n === 1) {
+                    results.push(arr.join("")); // join turns array back into a string.
+                } else {
+                    for (var i = 0; i < n-1; i++) {
+                        generate(n - 1, arr, results);
+                        if (n%2 === 0) {
+                            swap(arr, i, n-1);
+                        } else {
+                            swap(arr, 0, n-1);
+                        }
+                    }
+                    generate(n - 1, arr, results);
+                }
+            }
+
+            // Swaps the values of two indexes of an array.
+            function swap(a, i, j) {
+                var x = a[i];
+                a[i] = a[j];
+                a[j] = x;
+            }
+
+            function Timer() {
+                var start = 0;
+                var end = 0;
+                this.start = function() {
+                    start = end = new Date();
+                }
+                this.end = function() {
+                    end = new Date();
+                }
+                this.time = function() {
+                    return end.getTime() - start.getTime();
+                }
+            }
+        });
+    </script>
+  </div>
+</body>
+</html>

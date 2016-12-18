@@ -1,0 +1,74 @@
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+footer {
+  padding-top: 50px;
+}
+
+/* Media queries that match the bootstrap col-md- stop point */
+/* Big Screen */
+@media screen and (min-width: 992px) {
+  .fix {
+    position: fixed;
+  }
+  .bullet {
+    margin-left: 25px;
+  }
+}
+/* Mobile */
+@media screen and (max-width: 991px) {
+  .center {
+    text-align: center;
+  }
+}
+
+.nav-padding {
+  padding: 10px 15px;
+}
+
+.larger-icons {
+  font-size: 1.5em;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.blog-content {
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.blog-content p {
+	font-size: 21px;
+	line-height: 1.58em;
+  padding-bottom: 10px;
+}
+
+.blog-content article {
+  padding-bottom: 40px;
+}
+
+.blog-title {
+  font-family: 'Lucida Grande', sans-serif;
+  padding: 10px 0px 0px 0px;
+  border-top: 1px solid #333;
+}
+
+.blog-date {
+  padding-bottom: 15px;
+  font-family: 'Lucida Grande', sans-serif;
+}
+
+a {
+  color: red;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #000;
+}
+
+.active {
+  color: #000;
+}

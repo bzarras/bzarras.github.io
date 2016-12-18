@@ -1,0 +1,15 @@
+{
+  "name": "prismic.io",
+  "homepage": "https://github.com/prismicio/javascript-kit",
+  "version": "1.4.0",
+  "_release": "1.4.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.4.0",
+    "commit": "b43a85a8179cfea2caeaad721830458149b21c37"
+  },
+  "_source": "git://github.com/prismicio/javascript-kit.git",
+  "_target": "~1.4.0",
+  "_originalSource": "prismic.io",
+  "_direct": true
+}

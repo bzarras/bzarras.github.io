@@ -1,0 +1,30 @@
+{
+  "name": "Bens Website",
+  "authors": [
+    "Ben Zarras"
+  ],
+  "description": "Public website for Ben Zarras",
+  "main": "index.html",
+  "moduleType": [],
+  "keywords": [
+    "Web",
+    "Developer",
+    "Java",
+    "Developer"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "font-awesome": "~4.5.0",
+    "prismic.io": "~1.4.0"
+  }
+}
