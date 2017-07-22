@@ -15,11 +15,31 @@ footer {
   .bullet {
     margin-left: 25px;
   }
+
+  .music-track iframe {
+    width: 560px;
+    height: 315px;
+  }
 }
 /* Mobile */
 @media screen and (max-width: 991px) {
   .center {
     text-align: center;
+  }
+
+  .music-track {
+    padding-top: 56.25%;
+    width: 90%;
+    max-width: 560px;
+    position: relative;
+  }
+  .music-track > iframe {
+    /* need to add a container just for the iframe for this to actually work */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
   }
 }
 
