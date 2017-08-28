@@ -23,26 +23,25 @@ let attackInterval;
 let decayInterval;
 let releaseInterval;
 
-let audioContext = new AudioContext();
+let audioContext = new (window.AudioContext || window.webkitAudioContext)();
 let gainNode = audioContext.createGain();
-let globalOscilator;
+let oscillator; // Oscillator as a global kinda sucks, but not sure how to avoid it.
 gainNode.connect(audioContext.destination);
 gainNode.gain.value = volumeSlider.value;
 
 keyElement.innerHTML = 'PLAY';
 keyElement.addEventListener('mousedown', e => {
   if (e.which === 1) { // left mouse button
-    if (globalOscilator) {
-      // This globalOscilator thing sucks. Figure out a better way to manage this
-      globalOscilator.stop();
-      globalOscilator = null;
+    if (oscillator) {
+      oscillator.stop();
+      oscillator = null; // Double triple make sure the old oscillator is gone before creating a new one
     }
-    globalOscilator = playNote();
+    playNote();
   }
 });
 keyElement.addEventListener('mouseup', e => {
   if (e.which === 1) {
-    releaseNote(globalOscilator);
+    releaseNote(oscillator);
   }
 });
 
@@ -57,7 +56,7 @@ releaseSlider.addEventListener('input', e => RELEASE_MS = releaseSlider.value);
 
 function playNote () {
   [attackInterval, decayInterval, releaseInterval].forEach(interval => clearInterval(interval));
-  let oscillator = audioContext.createOscillator();
+  oscillator = audioContext.createOscillator();
   oscillator.frequency.value = frequencySlider.value;
   oscillator.type = waveSelector.value;
   oscillator.connect(gainNode);
@@ -83,10 +82,9 @@ function playNote () {
     gainNode.gain.value += attackGainTick;
   }, 10);
   oscillator.start();
-  return oscillator;
 }
 
-function releaseNote(oscillator) {
+function releaseNote () {
   [attackInterval, decayInterval, releaseInterval].forEach(interval => clearInterval(interval));
   const currentGain = gainNode.gain.value;
   const releaseGainTick = currentGain / (RELEASE_MS / 10);
@@ -95,6 +93,7 @@ function releaseNote(oscillator) {
     releaseProgress += 10;
     if (releaseProgress >= RELEASE_MS) {
       oscillator.stop();
+      oscillator = null; // Make sure the old oscillator is gone before creating a new one
       clearInterval(releaseInterval);
     }
     gainNode.gain.value -= releaseGainTick;
