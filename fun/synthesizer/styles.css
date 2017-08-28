@@ -1,0 +1,35 @@
+body {
+  font-family: sans-serif;
+}
+
+.key {
+  padding: 100px 0;
+  width: 300px;
+  background-color: orange;
+  border-radius: 10px;
+  color: #fff;
+  text-align: center;
+  display: inline-block;
+  vertical-align: top;
+  box-shadow: 0 5px 0px 1px #555;
+}
+
+.key:active {
+  margin-top: 4px;
+  box-shadow: 0 1px 0px 1px #555;
+}
+
+.control-area {
+  display: inline-block;
+  width: 350px;
+  vertical-align: top;
+}
+
+.control {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.control__input {
+  width: 300px;
+}

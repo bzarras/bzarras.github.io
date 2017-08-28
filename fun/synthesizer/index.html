@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Synthesizer</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <h1><i>SIMPLE SYNTH</i></h1>
+    <div class="control-area">
+      <div class="control">
+        <p>Frequency</p>
+        <p id="frequency-display"></p>
+        <input class="control__input" id="frequency-slider" type="range" name="frequency" min="27.5" max="4186" value="43.65">
+      </div>
+      <div class="control">
+        <p>Wave Type</p>
+        <select name="wave-type" id="wave-selector">
+          <option value="sine">Sine</option>
+          <option value="square">Square</option>
+          <option value="triangle">Triangle</option>
+          <option value="sawtooth">Sawtooth</option>
+        </select>
+      </div>
+      <div class="control">
+        <p>Volume</p>
+        <input class="control__input" id="volume-slider" type="range" name="gain" min="0" max="1" step="0.1" value="1">
+      </div>
+    </div>
+    <div class="control-area">
+      <div class="control">
+        <p>Attack</p>
+        <input class="control__input" id="attack-slider" type="range" name="attack" min="1" max="3000" step="1" value="100">
+      </div>
+      <div class="control">
+        <p>Decay</p>
+        <input class="control__input" id="decay-slider" type="range" name="decay" min="1" max="3000" step="1" value="100">
+      </div>
+      <div class="control">
+        <p>Sustain</p>
+        <input class="control__input" id="sustain-slider" type="range" name="sustain" min="0" max="1" step="0.01" value="1">
+      </div>
+      <div class="control">
+        <p>Release</p>
+        <input class="control__input" id="release-slider" type="range" name="release" min="1" max="3000" step="1" value="100">
+      </div>
+    </div>
+    <div class="key"></div>
+    <script type="text/javascript" src="./synthesizer.js"></script>
+  </body>
+</html>
