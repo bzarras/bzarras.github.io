@@ -1,7 +1,7 @@
 'use strict';
 
 // Elements
-let keyElement = document.querySelector('.key');
+let keyElement = document.querySelector('.key-button');
 let frequencySlider = document.querySelector("#frequency-slider");
 let frequencyDisplay = document.querySelector('#frequency-display');
 let waveSelector = document.querySelector('#wave-selector');
