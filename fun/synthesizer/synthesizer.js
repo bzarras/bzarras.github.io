@@ -30,20 +30,25 @@ gainNode.connect(audioContext.destination);
 gainNode.gain.value = volumeSlider.value;
 
 keyElement.innerHTML = 'PLAY';
-keyElement.addEventListener('mousedown', e => {
-  if (e.which === 1) { // left mouse button
+let mouseDownHandler = event => {
+  if (event.which === 1) { // left mouse button
     if (oscillator) {
       oscillator.stop();
       oscillator = null; // Double triple make sure the old oscillator is gone before creating a new one
     }
     playNote();
   }
-});
-keyElement.addEventListener('mouseup', e => {
-  if (e.which === 1) {
+}
+let mouseUpHandler = event => {
+  if (event.which === 1) {
     releaseNote(oscillator);
   }
-});
+}
+keyElement.addEventListener('mousedown', mouseDownHandler);
+keyElement.addEventListener('touchstart', mouseDownHandler);
+keyElement.addEventListener('mouseup', mouseUpHandler);
+keyElement.addEventListener('touchend', mouseUpHandler);
+
 
 // Update global variables when sliders move
 frequencyDisplay.innerHTML = frequencySlider.value + ' Hz';
