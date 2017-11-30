@@ -1,18 +1,10 @@
-/** NOTES
-* The submit function that gets called in the Prismic Api takes a function, which means
-* things I want to appear on the page need to be done inside there because
-* otherwise the data might not exist yet.
-*/
-
 $("document").ready(function(){
-
   Prismic.Api('https://brooklynben.prismic.io/api', function (err, Api) {
   	Api.form("everything")
   	.ref(Api.master())
   	.query(Prismic.Predicates.at("document.type", "blog"))
-  	// the function passed to submit is a callback and thus work needs to be done inside it.
   	.submit(function (err, response) {
-  		var results = response.results; // Array
+  		var results = response.results;
   		var mainContent = $("#blogContent");
   		var title;
   		var body;
@@ -46,5 +38,4 @@ $("document").ready(function(){
 
   	});
   }, "MC5WalZTMng4QUFOa3gyVFRW.77-9O--_vTdY77-9Z--_ve-_vXvvv73vv71mZRsrTlA-77-977-977-977-977-9J--_ve-_vTLvv715Cls");
-
-}); // End jQuery document.ready function
+});

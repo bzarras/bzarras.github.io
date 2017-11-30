@@ -76,10 +76,6 @@
 
             // Call permute to return a list of permutations of a word
             function permute(text) {
-              // if (text.length > 7) {
-              //     alert("Too many characters! This algorithm runs in time proportional to N!.")
-              //     return null;
-              // }
               var charArray = text.split(""); // turns text into array of chars
               var results = [];
               generate(text.length, charArray, results);
