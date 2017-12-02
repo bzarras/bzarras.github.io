@@ -59,7 +59,7 @@ footer {
 	font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-.blog-content p {
+.blog-content p, .blog-content ul {
 	font-size: 21px;
 	line-height: 1.58em;
   padding-bottom: 10px;
