@@ -13,7 +13,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "new-blog": "bash ./bin/newBlog.sh",
-    "build-blog": "bash ./bin/renderBlogPosts.sh"
+    "build-blog": "bash ./bin/renderBlogPosts.sh",
+    "publish-blog": "bash ./bin/publishBlog.sh"
   },
   "repository": {
     "type": "git",
