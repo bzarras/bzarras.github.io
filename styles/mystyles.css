@@ -59,25 +59,30 @@ footer {
 	font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-.blog-content p, .blog-content ul {
-	font-size: 21px;
-	line-height: 1.58em;
-  padding-bottom: 10px;
-}
-
-.blog-content article {
-  padding-bottom: 40px;
-}
-
-.blog-title {
+/* blog title */
+.blog-content > h1 {
+  font-size: 30px;
   font-family: 'Lucida Grande', sans-serif;
   padding: 10px 0px 0px 0px;
   border-top: 1px solid #333;
 }
 
-.blog-date {
+/* blog date */
+.blog-content > h2:nth-of-type(1) {
+  font-size: 14px;
+  margin-top: 0;
   padding-bottom: 15px;
   font-family: 'Lucida Grande', sans-serif;
+}
+
+.blog-content p, .blog-content ul, .blog-content ol {
+	font-size: 21px;
+	line-height: 1.58em;
+  padding-bottom: 10px;
+}
+
+.blog-content {
+  padding-bottom: 40px;
 }
 
 a {

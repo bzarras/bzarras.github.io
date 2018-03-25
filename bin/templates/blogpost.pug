@@ -1,0 +1,50 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=Edge")
+        meta(name="description" content="Hey I'm Ben. This is my blog.")
+        meta(name="keywords" content="java, javascript, developer, html, css, brooklyn, startup, clearfactr, rochester, new york")
+        meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
+        meta(name="apple-mobile-web-app-capable" content="yes")
+        title= title
+        link(rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css")
+        link(rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css")
+        link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:200" type="text/css")
+        link(rel="stylesheet" href="../styles/mystyles.css")
+        link(rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png")
+        script(language="javascript" type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js")
+        script(type="text/javascript" src="../bower_components/prismic.io/dist/prismic.io.min.js")
+    body
+        .container-fluid
+            .row
+                .col-xs-12.col-md-3
+                    .fix.center
+                        div
+                            a(href="../index.html"): h1 BEN ZARRAS
+                        ul.nav.nav-stacked(role="tablist")
+                            li: a(href="../index.html") ABOUT
+                            li: a.active(href="index.html") BLOG
+                            li: a(href="../projects/index.html") PROJECTS
+                            li: a(href="../fun/index.html") FUN
+                        div.nav-padding.larger-icons
+                            a(href="https://twitter.com/benzarras")
+                                i.fa.fa-twitter
+                            | 
+                            a(href="https://www.linkedin.com/in/benzarras")
+                                i.fa.fa-linkedin-square
+                            | 
+                            a(href="https://instagram.com/benzarras/")
+                                i.fa.fa-instagram
+                            | 
+                            a(href="https://medium.com/@benzarras")
+                                i.fa.fa-medium
+                            | 
+                            a(href="https://github.com/bzarras")
+                                i.fa.fa-github
+                .col-xs-12.col-md-6
+                    #blog
+                        article#blogContent.blog-content
+                    footer#footer.center
+                        p &copy; Ben Zarras 2018 | Built by Ben
+

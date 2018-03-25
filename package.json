@@ -1,0 +1,27 @@
+{
+  "name": "bzarras.github.io",
+  "version": "1.0.0",
+  "description": "My personal website and blog",
+  "main": "index.html",
+  "dependencies": {},
+  "devDependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "marked": "^0.3.18",
+    "moment": "^2.21.0",
+    "pug": "^2.0.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "new-blog": "bash ./bin/newBlog.sh",
+    "build-blog": "bash ./bin/renderBlogPosts.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bzarras/bzarras.github.io.git"
+  },
+  "author": "Ben Zarras",
+  "bugs": {
+    "url": "https://github.com/bzarras/bzarras.github.io/issues"
+  },
+  "homepage": "http://www.benzarras.com"
+}
