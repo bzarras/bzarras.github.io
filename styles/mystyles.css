@@ -56,7 +56,8 @@ footer {
 }
 
 .blog-content {
-	font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: Arial, sans-serif;
+  padding-bottom: 40px;
 }
 
 /* blog title */
@@ -79,10 +80,6 @@ footer {
 	font-size: 21px;
 	line-height: 1.58em;
   padding-bottom: 10px;
-}
-
-.blog-content {
-  padding-bottom: 40px;
 }
 
 a {
