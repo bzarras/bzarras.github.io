@@ -6,7 +6,7 @@
   "dependencies": {},
   "devDependencies": {
     "cheerio": "^1.0.0-rc.2",
-    "marked": "^0.3.18",
+    "marked": "^4.0.10",
     "moment": "^2.21.0",
     "pug": "^2.0.3"
   },
