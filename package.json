@@ -7,7 +7,7 @@
   "devDependencies": {
     "cheerio": "^1.0.0-rc.2",
     "marked": "^0.3.18",
-    "moment": "^2.21.0",
+    "moment": "^2.29.4",
     "pug": "^2.0.3"
   },
   "scripts": {
